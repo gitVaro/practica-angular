@@ -1,0 +1,33 @@
+<mat-card>
+  <form color="accent" class="form" [formGroup]="form" (ngSubmit)="getById()">
+    <mat-form-field color="primary">
+      <mat-label>ID de usuario</mat-label>
+      <mat-select formControlName="id">
+        <mat-option *ngFor="let u of users" value="{{ u.id }}">{{
+          u.id
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br />
+    <button type="submit" mat-fab color="accent">
+      <fa-icon [icon]="faSearch"></fa-icon>
+    </button>
+  </form>
+  <table *ngIf="user">
+    <thead>
+      <tr id="header">
+        <th>ID</th>
+        <th>NOMBRE DE USUARIO</th>
+        <th>PERFIL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ user[0].id }}</td>
+        <td>{{ user[0].username }}</td>
+        <td *ngIf="user[0].profile_id == 1">usuario</td>
+        <td *ngIf="user[0].profile_id == 2">administrador</td>
+      </tr>
+    </tbody>
+  </table>
+</mat-card>

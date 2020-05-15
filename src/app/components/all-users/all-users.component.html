@@ -1,0 +1,42 @@
+<div class="card" *ngIf="users">
+  <table>
+    <thead>
+      <tr id="header">
+        <th>ID</th>
+        <th>NOMBRE DE USUARIO</th>
+        <th>PERFIL</th>
+        <th *ngIf="isAdmin()">ELIMINAR USUARIO</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+        <td *ngIf="user.profile_id == 1">usuario</td>
+        <td *ngIf="user.profile_id == 2">administrador</td>
+        <td *ngIf="isAdmin()">
+          <button
+            type="submit"
+            mat-mini-fab
+            color="warn"
+            (click)="deleteUser(user.id)"
+            *ngIf="user.profile_id == 1"
+            matTooltip="Eliminar usuario"
+          >
+            <fa-icon [icon]="faUserTimes"></fa-icon>
+          </button>
+          <button
+            type="submit"
+            mat-mini-fab
+            color="warn"
+            (click)="deleteUser(user.id)"
+            *ngIf="user.profile_id == 2"
+            disabled
+          >
+            <fa-icon [icon]="faUserTimes"></fa-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

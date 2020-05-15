@@ -1,0 +1,62 @@
+{
+  "profiles": [
+    {
+      "id": "1",
+      "name": "user"
+    },
+    {
+      "id": "2",
+      "name": "admin"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "varovarezgago@gmail.com",
+      "password": "672748795Aa",
+      "profile_id": "1"
+    },
+    {
+      "id": 2,
+      "username": "user2@gmail.com",
+      "password": "user2",
+      "profile_id": "1"
+    },
+    {
+      "id": 3,
+      "username": "user3@gmail.com",
+      "password": "user3",
+      "profile_id": "1"
+    },
+    {
+      "id": 4,
+      "username": "user4@gmail.com",
+      "password": "user4",
+      "profile_id": "1"
+    },
+    {
+      "id": 5,
+      "username": "admin",
+      "password": "admin",
+      "profile_id": "2"
+    },
+    {
+      "id": 6,
+      "username": "admin2",
+      "password": "admin",
+      "profile_id": "2"
+    },
+    {
+      "id": 7,
+      "username": "prueba",
+      "password": "prueba",
+      "profile_id": "1"
+    },
+    {
+      "id": 8,
+      "username": "prueba2",
+      "password": "prueba2",
+      "profile_id": "1"
+    }
+  ]
+}

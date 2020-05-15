@@ -1,0 +1,39 @@
+<mat-card>
+  <form
+    color="accent"
+    class="form"
+    [formGroup]="loginForm"
+    (ngSubmit)="addUser()"
+  >
+    <mat-form-field color="primary">
+      <input
+        type="text"
+        id="username"
+        name="username"
+        formControlName="username"
+        matInput
+        placeholder="Nombre de usuario"
+      /> </mat-form-field
+    ><br />
+    <mat-form-field color="primary">
+      <input
+        type="password"
+        id="password"
+        name="password"
+        formControlName="password"
+        matInput
+        placeholder="Constraseña"
+      /> </mat-form-field
+    ><br />
+    <mat-form-field color="primary">
+      <mat-label>Perfil de usuario</mat-label>
+      <mat-select formControlName="profile">
+        <mat-option value="1">Usuario</mat-option>
+        <mat-option value="2">Administrador</mat-option>
+      </mat-select> </mat-form-field
+    ><br />
+    <button type="submit" mat-fab color="accent">
+      <fa-icon [icon]="faPlus"></fa-icon>
+    </button>
+  </form>
+</mat-card>

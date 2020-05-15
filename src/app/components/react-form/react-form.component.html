@@ -1,0 +1,45 @@
+<div class="cotainer">
+  <h2>Formulario reactivo</h2>
+  <mat-card class="card">
+    <form
+      color="accent"
+      class="form"
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()"
+    >
+      <mat-form-field class="full-width">
+        <input
+          type="text"
+          id="email"
+          name="email"
+          formControlName="email"
+          matInput
+          placeholder="Correo electrónico"
+        /> </mat-form-field
+      ><br />
+      <mat-form-field class="full-width">
+        <input
+          type="text"
+          id="name"
+          name="name"
+          formControlName="name"
+          matInput
+          placeholder="Nombre"
+        /> </mat-form-field
+      ><br />
+      <mat-form-field class="full-width">
+        <input
+          type="text"
+          id="lastname"
+          name="lastname"
+          formControlName="lastname"
+          matInput
+          placeholder="Apellidos"
+        /> </mat-form-field
+      ><br />
+      <button type="submit" mat-raised-button color="primary">
+        Aceptar
+      </button>
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,39 @@
+<mat-toolbar
+  color="primary"
+  *ngIf="router.url != '/login'"
+  [class.mat-elevation-z5]="isActive"
+>
+  <mat-toolbar-row>
+    <button
+      mat-mini-fab
+      color
+      [routerLink]="'home'"
+      color="basic"
+      matTooltip="Volver al inicio"
+    >
+      <fa-icon [icon]="faHome"></fa-icon>
+    </button>
+    <button
+      mat-mini-fab
+      color
+      (click)="logOut()"
+      color="basic"
+      matTooltip="Cerrar sesión"
+    >
+      <fa-icon [icon]="faSignOutAlt"></fa-icon>
+    </button>
+    <button mat-button [routerLink]="'all-users'">Listar usuarios</button>
+    <button mat-button [routerLink]="'user-by-id'">
+      Buscar usuario por id
+    </button>
+    <button mat-button *ngIf="isAdmin()" [routerLink]="'add-user'">
+      Añadir usuario
+    </button>
+    <span>
+      <button mat-button [routerLink]="'form'">Formulario</button>
+      <span class="user">
+        <fa-icon [icon]="faUser"> </fa-icon> {{ getUsername() }}
+      </span>
+    </span>
+  </mat-toolbar-row>
+</mat-toolbar>
